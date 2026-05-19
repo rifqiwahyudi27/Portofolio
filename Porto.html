@@ -1,0 +1,1285 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rifqi Wahyudi | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap");
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "JetBrains Mono", "Courier Prime", monospace;
+        background-color: #e5e5e5;
+        background-image: repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 0, 0, 0.03) 2px,
+          rgba(0, 0, 0, 0.03) 4px
+        );
+        color: #1a1a1a;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Retro shadow effect - offset like Windows XP */
+      .shadow-retro {
+        box-shadow:
+          4px 4px 0px #000000,
+          8px 8px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      .shadow-retro-sm {
+        box-shadow:
+          2px 2px 0px #000000,
+          4px 4px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      .shadow-retro-hover:hover {
+        box-shadow:
+          2px 2px 0px #000000,
+          4px 4px 0px rgba(0, 0, 0, 0.15) !important;
+        transform: translate(-1px, -1px);
+      }
+
+      /* Border retro style */
+      .border-retro {
+        border: 3px solid #1a1a1a;
+      }
+
+      .border-retro-lg {
+        border: 4px solid #1a1a1a;
+      }
+
+      /* Button retro style */
+      .btn-retro {
+        font-family: "JetBrains Mono", monospace;
+        border: 3px solid #1a1a1a;
+        padding: 10px 20px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        box-shadow: 3px 3px 0px #1a1a1a;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-retro:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 5px 5px 0px #1a1a1a;
+      }
+
+      .btn-retro:active {
+        transform: translate(1px, 1px);
+        box-shadow: 1px 1px 0px #1a1a1a;
+      }
+
+      /* Retro Card */
+      .card-retro {
+        background: #ffffff;
+        border: 3px solid #1a1a1a;
+        box-shadow: 4px 4px 0px #1a1a1a;
+        padding: 20px;
+        transition: all 0.2s ease;
+      }
+
+      .card-retro:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 7px 7px 0px #1a1a1a;
+      }
+
+      /* Color pastel */
+      .bg-cyan-retro {
+        background-color: #9fe8f5;
+      }
+      .bg-pink-retro {
+        background-color: #f8d9df;
+      }
+      .bg-cream-retro {
+        background-color: #fff6dd;
+      }
+      .bg-yellow-retro {
+        background-color: #ffd966;
+      }
+
+      .text-dark {
+        color: #1a1a1a;
+      }
+
+      .hero-grid {
+        align-items: flex-start;
+      }
+
+      .hero-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+        gap: 1.5rem;
+      }
+
+      .profile-image-card {
+        max-width: 420px;
+        width: 100%;
+        height: auto;
+      }
+
+      .contact-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5rem;
+        height: 100%;
+      }
+
+      .nav-blur {
+        background: #9fe8f5;
+        border-bottom: 3px solid #1a1a1a;
+        box-shadow: 0px 3px 0px #1a1a1a;
+        transition: all 0.3s ease;
+      }
+
+      .nav-blur.scrolled {
+        background: rgba(159, 232, 245, 0.9);
+        box-shadow: 0px 2px 0px #1a1a1a;
+      }
+
+      .card-zinc {
+        background: #ffffff;
+        border: 3px solid #1a1a1a;
+        box-shadow: 3px 3px 0px #1a1a1a;
+        transition: all 0.1s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-zinc:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 5px 5px 0px #1a1a1a;
+      }
+
+      /* Window header controls - macOS retro style */
+      .window-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #1a1a1a;
+      }
+
+      .window-title {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .window-controls {
+        display: flex;
+        gap: 6px;
+      }
+
+      .control-btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .control-red {
+        background-color: #ff5555;
+      }
+      .control-yellow {
+        background-color: #ffaa00;
+      }
+      .control-green {
+        background-color: #00cc00;
+      }
+
+      .control-btn:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Typography hierarchy */
+      .section-title {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .job-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 8px 0 4px 0;
+      }
+
+      .company-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+
+      /* Contact info alignment */
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .contact-item {
+        display: grid;
+        grid-template-columns: 140px 16px minmax(150px, 1fr);
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .contact-label,
+      .contact-colon,
+      .contact-value {
+        font-size: 14px;
+        color: #1a1a1a;
+        line-height: 1.4;
+      }
+
+      .contact-label {
+        font-weight: 700;
+        text-align: left;
+      }
+
+      .contact-colon {
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .contact-value {
+        font-weight: 500;
+        text-align: left;
+        word-break: break-word;
+      }
+
+      .gallery-overlay {
+        position: fixed;
+        inset: 0;
+        display: none;
+        place-items: center;
+        background: rgba(0, 0, 0, 0.78);
+        backdrop-filter: blur(4px);
+        z-index: 60;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+
+      .gallery-overlay.open {
+        display: grid;
+        opacity: 1;
+      }
+
+      .gallery-modal {
+        position: relative;
+        width: min(92vw, 920px);
+        max-height: 90vh;
+        background: #ffffff;
+        border: 4px solid #1a1a1a;
+        box-shadow: 8px 8px 0 #000000;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .gallery-image {
+        width: 100%;
+        max-height: 68vh;
+        object-fit: contain;
+        background: #111111;
+      }
+
+      .gallery-caption {
+        color: #1a1a1a;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .gallery-controls {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .gallery-btn,
+      .gallery-close {
+        font-family: "JetBrains Mono", monospace;
+        border: 3px solid #1a1a1a;
+        background: #ffffff;
+        color: #1a1a1a;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .gallery-btn {
+        padding: 10px 14px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .gallery-btn:hover,
+      .gallery-close:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 3px 3px 0 #1a1a1a;
+      }
+
+      .gallery-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+
+      .project-clickable {
+        cursor: pointer;
+      }
+
+      .project-clickable img {
+        transition: transform 0.25s ease;
+      }
+
+      .project-clickable:hover img {
+        transform: scale(1.03);
+      }
+
+      /* Social icons */
+      .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border: 2px solid #1a1a1a;
+        border-radius: 4px;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background-color 0.2s ease;
+        font-size: 16px;
+        color: #1a1a1a;
+        background: white;
+      }
+
+      .social-icon:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 3px 3px 0px #1a1a1a;
+        background: #fff6dd;
+      }
+
+      .social-icon:active {
+        transform: translate(1px, 1px);
+        box-shadow: 1px 1px 0px #1a1a1a;
+      }
+    </style>
+    <style>
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 24px;
+        }
+
+        .contact-item {
+          display: grid;
+          grid-template-columns: 1fr 16px 1fr;
+          align-items: center;
+          gap: 6px 12px;
+        }
+
+        .contact-label {
+          min-width: auto;
+          text-align: left;
+        }
+
+        .contact-colon {
+          text-align: right;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Background Decoration -->
+
+    <!-- NAVBAR RETRO -->
+    <nav class="fixed w-full z-50 nav-blur">
+      <div
+        class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="text-sm font-bold text-dark tracking-tight border-retro px-3 py-1 bg-cream-retro shadow-retro-sm hover:shadow-retro transition-all duration-150"
+        >
+          ► RIFQI
+        </a>
+
+        <!-- Menu -->
+        <div class="hidden md:flex gap-2">
+          <a
+            href="#home"
+            class="btn-retro nav-link bg-cyan-retro text-dark text-xs"
+            style="padding: 6px 12px"
+            >HOME</a
+          >
+          <a
+            href="#about"
+            class="btn-retro nav-link bg-pink-retro text-dark text-xs"
+            style="padding: 6px 12px"
+            >ABOUT</a
+          >
+          <a
+            href="#experience"
+            class="btn-retro nav-link bg-yellow-retro text-dark text-xs"
+            style="padding: 6px 12px"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="btn-retro nav-link bg-cream-retro text-dark text-xs"
+            style="padding: 6px 12px"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="btn-retro nav-link bg-cyan-retro text-dark text-xs font-bold"
+            style="padding: 6px 12px"
+            >CONTACT</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center pt-32 pb-20 relative"
+    >
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 hero-grid">
+        <!-- Left Panel -->
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="hero-panel h-full"
+        >
+          <div class="card-retro bg-yellow-retro mb-6 shadow-retro-sm">
+            <div class="window-header">
+              <span class="window-title">★ PROFILE</span>
+              <div class="window-controls">
+                <button class="control-btn control-red"></button>
+                <button class="control-btn control-yellow"></button>
+                <button class="control-btn control-green"></button>
+              </div>
+            </div>
+            <div class="text-xs font-medium text-dark">
+              » Status: Currently Working & Available for Freelance Projects
+            </div>
+          </div>
+
+          <h1
+            class="text-5xl md:text-6xl font-extrabold mb-2 leading-tight text-dark"
+            style="letter-spacing: -1px"
+          >
+            RIFQI WAHYUDI
+          </h1>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark">
+            IT Support Specialist
+          </h2>
+
+          <div class="card-retro bg-cream-retro mb-6 shadow-retro-sm">
+            <p class="text-sm leading-relaxed font-medium text-dark">
+              ✓ Troubleshooting Hardware & Software<br />
+              ✓ Network Configuration & Maintenance<br />
+              ✓ Solusi Cepat & Tepat 24/7<br />
+              ✓ Berpengalaman sejak 2023
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="CV Rifqi Wahyudi.pdf"
+              target="_blank"
+              class="btn-retro bg-pink-retro text-dark text-xs font-bold hover:shadow-retro transition-all duration-150"
+              style="padding: 8px 16px"
+              >📥 DOWNLOAD CV</a
+            >
+            <a
+              href="#contact"
+              class="btn-retro bg-cyan-retro text-dark text-xs font-bold hover:shadow-retro transition-all duration-150"
+              style="padding: 8px 16px"
+              >💬 CONTACT</a
+            >
+          </div>
+        </div>
+
+        <!-- Right Panel - Image -->
+        <div
+          class="relative flex justify-center items-start h-full"
+          data-aos="zoom-in"
+          data-aos-duration="1200"
+        >
+          <div
+            class="card-retro bg-pink-retro p-2 w-72 h-72 md:w-96 md:h-[520px] shadow-retro profile-image-card"
+          >
+            <div
+              class="window-header px-2 py-1 mb-2"
+              style="margin-bottom: 8px"
+            >
+              <span class="window-title text-xs">📷 PROFILE</span>
+              <div class="window-controls" style="gap: 3px">
+                <button
+                  class="control-btn control-red"
+                  style="width: 8px; height: 8px"
+                ></button>
+                <button
+                  class="control-btn control-yellow"
+                  style="width: 8px; height: 8px"
+                ></button>
+                <button
+                  class="control-btn control-green"
+                  style="width: 8px; height: 8px"
+                ></button>
+              </div>
+            </div>
+            <div
+              class="w-full h-full overflow-hidden border-2 border-dark bg-black"
+            >
+              <img
+                src="rifqi.jpeg"
+                alt="Rifqi Wahyudi"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 border-t-4 border-dark">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-8">
+          <div class="card-retro bg-cyan-retro shadow-retro-sm">
+            <div class="window-header">
+              <span class="window-title">★ ABOUT ME</span>
+              <div class="window-controls">
+                <button class="control-btn control-red"></button>
+                <button class="control-btn control-yellow"></button>
+                <button class="control-btn control-green"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          <!-- About Me -->
+          <div data-aos="fade-right">
+            <div class="card-retro bg-cream-retro shadow-retro-sm h-full">
+              <div class="window-header">
+                <span class="window-title text-sm">👤 BIO</span>
+                <div class="window-controls" style="gap: 3px">
+                  <button
+                    class="control-btn control-red"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-yellow"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-green"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                </div>
+              </div>
+              <p class="text-sm leading-7 font-medium text-dark text-justify">
+                Profesional IT Support berpengalaman dalam troubleshooting
+                hardware, software, dan sistem jaringan. Memiliki rekam jejak
+                sukses menangani permasalahan teknis dengan solusi cepat dan
+                efektif.
+              </p>
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div data-aos="fade-left">
+            <div
+              class="card-retro bg-pink-retro shadow-retro-sm h-full flex flex-col justify-between"
+            >
+              <div>
+                <div class="window-header">
+                  <span class="window-title text-sm">⚙️ TECHNICAL SKILLS</span>
+                  <div class="window-controls" style="gap: 3px">
+                    <button
+                      class="control-btn control-red"
+                      style="width: 8px; height: 8px"
+                    ></button>
+                    <button
+                      class="control-btn control-yellow"
+                      style="width: 8px; height: 8px"
+                    ></button>
+                    <button
+                      class="control-btn control-green"
+                      style="width: 8px; height: 8px"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3 mt-4">
+                <div
+                  class="bg-yellow-retro border-retro px-3 py-2 text-xs font-bold text-dark"
+                >
+                  🌐 NETWORKING
+                </div>
+                <div
+                  class="bg-cyan-retro border-retro px-3 py-2 text-xs font-bold text-dark"
+                >
+                  🖥️ REMOTE
+                </div>
+                <div
+                  class="bg-cream-retro border-retro px-3 py-2 text-xs font-bold text-dark"
+                >
+                  🔧 TROUBLESHOOT
+                </div>
+                <div
+                  class="bg-yellow-retro border-retro px-3 py-2 text-xs font-bold text-dark flex items-center justify-start gap-2"
+                >
+                  <i class="fab fa-windows"></i> OS (WINDOWS)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 border-t-4 border-dark">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="card-retro bg-yellow-retro mb-10 shadow-retro-sm">
+          <div class="window-header">
+            <span class="window-title">★ EXPERIENCE</span>
+            <div class="window-controls">
+              <button class="control-btn control-red"></button>
+              <button class="control-btn control-yellow"></button>
+              <button class="control-btn control-green"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Customer Service -->
+          <div data-aos="fade-up">
+            <div
+              class="card-retro bg-cyan-retro border-retro-lg shadow-retro-sm"
+            >
+              <div class="window-header">
+                <span class="window-title text-sm"
+                  >📅 April 2021 – Juni 2021</span
+                >
+                <div class="window-controls" style="gap: 3px">
+                  <button
+                    class="control-btn control-red"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-yellow"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-green"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                </div>
+              </div>
+              <h3 class="job-title">Customer Service</h3>
+              <p class="company-name">PT. Multi Karya Garmentexindo</p>
+              <ul class="text-xs space-y-1 text-dark font-medium pl-4">
+                <li>• Membalas chat pelanggan dengan cepat dan profesional</li>
+                <li>• Memberikan informasi produk, harga, dan stok</li>
+                <li>• Menangani pesanan, komplain, retur, dan refund</li>
+                <li>
+                  • Follow up pesanan dan koordinasi dengan tim pengiriman
+                </li>
+                <li>• Menjaga performa toko dan kepuasan pelanggan</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Admin Logistik -->
+          <div data-aos="fade-up">
+            <div
+              class="card-retro bg-pink-retro border-retro-lg shadow-retro-sm"
+            >
+              <div class="window-header">
+                <span class="window-title text-sm"
+                  >📅 Juli 2021 – November 2023</span
+                >
+                <div class="window-controls" style="gap: 3px">
+                  <button
+                    class="control-btn control-red"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-yellow"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-green"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                </div>
+              </div>
+              <h3 class="job-title">Admin Logistik</h3>
+              <p class="company-name">PT. Multi Karya Garmentexindo</p>
+              <ul class="text-xs space-y-1 text-dark font-medium pl-4">
+                <li>• Memproses dan mencetak resi melalui Jubelio</li>
+                <li>• Menginput resi ke sistem internal</li>
+                <li>• Memisahkan paket berdasarkan ekspedisi</li>
+                <li>• Serah terima barang dengan pihak ekspedisi</li>
+                <li>• Mendata barang retur dari ekspedisi</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- IT Support -->
+          <div data-aos="fade-up">
+            <div
+              class="card-retro bg-yellow-retro border-retro-lg shadow-retro-sm"
+            >
+              <div class="window-header">
+                <span class="window-title text-sm"
+                  >📅 Desember 2023 – Mei 2026</span
+                >
+                <div class="window-controls" style="gap: 3px">
+                  <button
+                    class="control-btn control-red"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-yellow"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-green"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                </div>
+              </div>
+              <h3 class="job-title">IT Support</h3>
+              <p class="company-name">PT. Multi Karya Garmentexindo</p>
+              <ul class="text-xs space-y-1 text-dark font-medium pl-4">
+                <li>• Troubleshooting hardware dan software perangkat IT</li>
+                <li>• Instalasi, konfigurasi, dan maintenance perangkat</li>
+                <li>• Pemeliharaan jaringan dan monitoring server</li>
+                <li>• Backup data dan keamanan sistem dasar</li>
+                <li>• Koordinasi dengan vendor eksternal</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- IT Support (Current) -->
+          <div data-aos="fade-up">
+            <div
+              class="card-retro bg-yellow-retro border-retro-lg shadow-retro-sm"
+            >
+              <div class="window-header">
+                <span class="window-title text-sm">📅 Mei 2026 - Present</span>
+                <div class="window-controls" style="gap: 3px">
+                  <button
+                    class="control-btn control-red"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-yellow"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                  <button
+                    class="control-btn control-green"
+                    style="width: 8px; height: 8px"
+                  ></button>
+                </div>
+              </div>
+              <h3 class="job-title">IT Support</h3>
+              <p class="company-name">PT. Surya Jaya Muliatama</p>
+              <ul class="text-xs space-y-1 text-dark font-medium pl-4">
+                <li>• Troubleshooting hardware dan software</li>
+                <li>• Instalasi dan konfigurasi perangkat IT</li>
+                <li>• Maintenance komputer dan jaringan</li>
+                <li>• Memberikan technical support kepada user</li>
+                <li>• Monitoring dan perbaikan sistem</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 border-t-4 border-dark">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- SECTION HEADER -->
+        <div
+          class="card-retro bg-pink-retro mb-10 shadow-retro-sm border-retro-lg"
+        >
+          <div class="window-header">
+            <span class="window-title">★ PROJECTS</span>
+            <div class="window-controls">
+              <button class="control-btn control-red"></button>
+              <button class="control-btn control-yellow"></button>
+              <button class="control-btn control-green"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRID CONTAINER -->
+        <div class="bg-cream-retro border-retro-lg p-6">
+          <!-- GRID -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+
+            <!-- Project 1 -->
+            <div
+              class="card-retro bg-cyan-retro overflow-hidden flex flex-col shadow-retro-sm"
+            >
+              <div class="aspect-[4/3] overflow-hidden border-b-3 border-dark">
+                <a href="https://mkggroup.co.id" target="_blank">
+                  <img
+                    src="https://image.thum.io/get/width/800/https://mkggroup.co.id"
+                    class="w-full h-full object-cover"
+                  />
+                </a>
+              </div>
+              <div class="p-4 flex-1">
+                <span class="text-xs font-bold uppercase text-dark"
+                  >🌐 COMPANY</span
+                >
+                <h3 class="text-sm font-bold text-dark mt-2">
+                  PT. Multi Karya Garmentexindo
+                </h3>
+                <p class="text-xs mt-2 text-dark font-medium">
+                  Company Profile
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div
+              class="card-retro bg-pink-retro overflow-hidden flex flex-col shadow-retro-sm project-clickable"
+              onclick="openGallery(0)"
+            >
+              <div class="aspect-[4/3] overflow-hidden border-b-3 border-dark">
+                <img src="Veyon.png" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-4 flex-1">
+                <span class="text-xs font-bold uppercase text-dark"
+                  >💻 REMOTE</span
+                >
+                <h3 class="text-sm font-bold text-dark mt-2">Veyon</h3>
+                <p class="text-xs mt-2 text-dark font-medium">
+                  Remote PC control
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div
+              class="card-retro bg-yellow-retro overflow-hidden flex flex-col shadow-retro-sm project-clickable"
+              onclick="openGallery(1)"
+            >
+              <div class="aspect-[4/3] overflow-hidden border-b-3 border-dark">
+                <img src="Papercut.png" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-4 flex-1">
+                <span class="text-xs font-bold uppercase text-dark"
+                  >🖨️ PRINT</span
+                >
+                <h3 class="text-sm font-bold text-dark mt-2">PaperCut</h3>
+                <p class="text-xs mt-2 text-dark font-medium">
+                  Printer management
+                </p>
+              </div>
+            </div>
+
+ 
+
+      <div id="galleryOverlay" class="gallery-overlay" aria-hidden="true">
+        <div
+          class="gallery-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="galleryCaption"
+        >
+          <button
+            type="button"
+            class="gallery-close"
+            onclick="closeGallery()"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <img
+            id="galleryImage"
+            class="gallery-image"
+            src=""
+            alt="Project preview"
+          />
+          <div id="galleryCaption" class="gallery-caption"></div>
+          <div class="gallery-controls">
+            <button type="button" class="gallery-btn" onclick="prevGallery()">
+              ← Prev
+            </button>
+            <button type="button" class="gallery-btn" onclick="nextGallery()">
+              Next →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-16 border-t-4 border-dark scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="card-retro bg-cream-retro mb-8 border-retro-lg">
+          <div class="window-header">
+            <span class="window-title">★ CONTACT</span>
+            <div class="window-controls">
+              <button class="control-btn control-red"></button>
+              <button class="control-btn control-yellow"></button>
+              <button class="control-btn control-green"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- LEFT (INFO) -->
+          <div data-aos="fade-right" class="contact-column">
+            <div class="card-retro bg-pink-retro border-retro-lg mb-6">
+              <div class="text-sm font-bold mb-3 pb-2 border-b-2 border-dark">
+                📞 CONTACT INFO
+              </div>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <span class="contact-label">Nama</span>
+                  <span class="contact-colon">:</span>
+                  <span class="contact-value">Rifqi Wahyudi</span>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">Email</span>
+                  <span class="contact-colon">:</span>
+                  <span class="contact-value">rifqy.wahyudi27@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">Telepon</span>
+                  <span class="contact-colon">:</span>
+                  <span class="contact-value">0896-6261-4044</span>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">Lokasi</span>
+                  <span class="contact-colon">:</span>
+                  <span class="contact-value">Tangerang</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social -->
+            <div class="card-retro bg-cyan-retro">
+              <div class="text-sm font-bold mb-3 pb-2 border-b-2 border-dark">
+                🔗 SOCIAL
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <a
+                  href="https://github.com/rifqiwahyudi27"
+                  target="_blank"
+                  class="social-icon"
+                  aria-label="GitHub"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/rifqi-wahyudi-577219218/"
+                  target="_blank"
+                  class="social-icon"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://instagram.com/rifqiwahyudi27"
+                  target="_blank"
+                  class="social-icon"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://wa.me/6289662614044"
+                  target="_blank"
+                  class="social-icon"
+                  aria-label="WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/@rifqiwahyudi27"
+                  target="_blank"
+                  class="social-icon"
+                  aria-label="YouTube"
+                >
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/share/1Gvth4pCyQ/"
+                  target="_blank"
+                  class="social-icon"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@rifqiwahyudi27?_r=1&_t=ZS-96U9ILZX7E0"
+                  target="_blank"
+                  class="social-icon"
+                  aria-label="TikTok"
+                >
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT (FORM) -->
+          <div data-aos="fade-left">
+            <div class="card-retro bg-yellow-retro border-retro-lg">
+              <div class="text-sm font-bold mb-3 pb-2 border-b-2 border-dark">
+                📝 SEND MESSAGE
+              </div>
+              <form id="contactForm" class="space-y-3">
+                <!-- Name -->
+                <div>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="NAME"
+                    required
+                    class="w-full bg-white border-retro px-3 py-2 text-xs font-bold text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-dark"
+                  />
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="EMAIL"
+                    required
+                    class="w-full bg-white border-retro px-3 py-2 text-xs font-bold text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-dark"
+                  />
+                </div>
+
+                <!-- Subject -->
+                <div>
+                  <input
+                    type="text"
+                    id="subject"
+                    placeholder="SUBJECT"
+                    required
+                    class="w-full bg-white border-retro px-3 py-2 text-xs font-bold text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-dark"
+                  />
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <textarea
+                    id="message"
+                    rows="3"
+                    placeholder="MESSAGE"
+                    required
+                    class="w-full bg-white border-retro px-3 py-2 text-xs font-bold text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-dark resize-none"
+                  ></textarea>
+                </div>
+
+                <!-- Button -->
+                <button
+                  type="submit"
+                  class="w-full btn-retro bg-cyan-retro text-dark"
+                >
+                  📤 SUBMIT
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t-4 border-dark py-8 bg-cream-retro">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="card-retro bg-white border-retro text-center">
+          <div class="text-xs font-bold text-dark">
+            [ © 2026 RIFQI WAHYUDI | ALL RIGHTS RESERVED ]
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+
+      // Navbar scroll detection
+      const navbar = document.querySelector(".nav-blur");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Smooth scroll + offset navbar
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const target = document.querySelector(targetId);
+
+          if (target) {
+            const offset = 80;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = target.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Contact form submit to WhatsApp
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+
+          const whatsappMessage = `Halo Rifqi, saya ${name} (${email}). ${subject}: ${message}`;
+          const encodedMessage = encodeURIComponent(whatsappMessage);
+          const whatsappUrl = `https://wa.me/6289662614044?text=${encodedMessage}`;
+
+          window.open(whatsappUrl, "_blank");
+        });
+
+      const galleryImages = [
+        {
+          src: "Veyon.png",
+          alt: "Veyon - Remote PC control",
+          caption: "Veyon — Remote PC control",
+        },
+        {
+          src: "Papercut.png",
+          alt: "PaperCut - Printer management",
+          caption: "PaperCut — Printer management",
+        },
+      ];
+
+      let currentGalleryIndex = 0;
+      const galleryOverlay = document.getElementById("galleryOverlay");
+      const galleryImage = document.getElementById("galleryImage");
+      const galleryCaption = document.getElementById("galleryCaption");
+
+      function updateGallery() {
+        const item = galleryImages[currentGalleryIndex];
+        galleryImage.src = item.src;
+        galleryImage.alt = item.alt;
+        galleryCaption.textContent = item.caption;
+      }
+
+      function openGallery(index) {
+        currentGalleryIndex = index;
+        updateGallery();
+        galleryOverlay.classList.add("open");
+        galleryOverlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeGallery() {
+        galleryOverlay.classList.remove("open");
+        galleryOverlay.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      function prevGallery() {
+        currentGalleryIndex =
+          (currentGalleryIndex + galleryImages.length - 1) %
+          galleryImages.length;
+        updateGallery();
+      }
+
+      function nextGallery() {
+        currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+        updateGallery();
+      }
+
+      galleryOverlay.addEventListener("click", function (e) {
+        if (e.target === galleryOverlay) {
+          closeGallery();
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (!galleryOverlay.classList.contains("open")) return;
+        if (e.key === "Escape") closeGallery();
+        if (e.key === "ArrowRight") nextGallery();
+        if (e.key === "ArrowLeft") prevGallery();
+      });
+    </script>
+  </body>
+</html>
